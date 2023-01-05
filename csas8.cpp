@@ -6,23 +6,21 @@ using namespace std;
 
 //Required Functions:
 
-void topLine(ofstream& oFile, int size, char c, string symbolName); //Anthony
+void makeSlash(ofstream& oFile, int size, char c);
 
-void makeSlash(ofstream& oFile, int size, char c); //Sebastian
+void makeEight(ofstream& oFile, int size, char c);
 
-void makeEight(ofstream& oFile, int size, char c); //Charles
+void makeTriangle(ofstream& oFile, int size, char c);
 
-void makeTriangle(ofstream& oFile, int size, char c); //Anthony
+bool readRecord(ifstream& iFile, string& typeString, int& lSize, char& c);
 
-bool readRecord(ifstream& iFile, string& typeString, int& lSize, char& c); //Yu Peng
+void openInputFile(ifstream& iFile, string prompt);
 
-void openInputFile(ifstream& iFile, string prompt); //Miracle
+bool openOutputFile(ofstream& oFile, string fname);
 
-bool openOutputFile(ofstream& oFile, string fname); //Yu Peng
+string createOutputFilename(string typeString, int labelSize);
 
-string createOutputFilename(string typeString, int labelSize); //Miracle
-
-void outputChar(ofstream& oFile, int count, char outChar); //Anthony
+void outputChar(ofstream& oFile, int count, char outChar);
 
 
 int main() {
@@ -60,4 +58,24 @@ int main() {
 	cout << shapeCount << "Shapes Created" << endl;
 	return 0;
 }
+
+bool readRecord(ifstream& iFile, string& typeString, int& lSize, char& c)
+{
+	if(iFile.eof()){
+		return false;
+	} else {
+	iFile >> typeString >> lSize >> c;
+	return true;
+	}
+}
+
+bool openOutputFile(ofstream& oFile, string fname)
+{
+	oFile.open(fname);
+	if(oFile.is_open()){
+		return true;
+	}
+	return false;
+}
+
 
