@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -55,4 +56,5 @@ int main() {
 	
 	cout << "Finished processing input file" << endl;
 	cout << shapeCount << "Shapes Created" << endl;
+	return 0;
 }
