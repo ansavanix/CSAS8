@@ -6,6 +6,8 @@ using namespace std;
 
 //Required Functions:
 
+void topLine(ofstream& oFile, int size, char c, string symbolName); //Anthony
+
 void makeSlash(ofstream& oFile, int size, char c); //Sebastian
 
 void makeEight(ofstream& oFile, int size, char c); //Charles
@@ -58,3 +60,4 @@ int main() {
 	cout << shapeCount << "Shapes Created" << endl;
 	return 0;
 }
+
