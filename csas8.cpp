@@ -8,6 +8,8 @@ using namespace std;
 
 void topLine(ofstream& oFile, int size, char c, string symbolName); //Anthony
 
+void xAxis(ofstream& oFile, int size); //Anthony
+
 void makeSlash(ofstream& oFile, int size, char c); //Sebastian
 
 void makeEight(ofstream& oFile, int size, char c); //Charles
