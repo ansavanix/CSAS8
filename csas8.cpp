@@ -4,11 +4,14 @@
 
 using namespace std;
 
-//Required Functions:
+
+//Helper Functions:
 
 void topLine(ofstream& oFile, int size, char c, string symbolName); //Anthony
 
 void xAxis(ofstream& oFile, int size); //Anthony
+
+//Required Functions:
 
 void makeSlash(ofstream& oFile, int size, char c); //Sebastian
 
@@ -82,7 +85,7 @@ bool openOutputFile(ofstream& oFile, string fname)
 	return false;
 }
 
-void makeEight(ofstream& oFile, int size, char c);
+void makeEight(ofstream& oFile, int size, char c)
 {
     int middle = 0;
     int edgeWidth = 0;
