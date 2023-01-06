@@ -102,7 +102,7 @@ void makeEight(ofstream& oFile, int size, char c)
     rowCount = edgeWidth / 2;
     if (size % 2 == 0)
     {
-        int middle = size / 2;
+        middle = size / 2;
     }
     else
     {
