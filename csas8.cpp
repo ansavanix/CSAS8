@@ -61,3 +61,23 @@ int main() {
 	return 0;
 }
 
+bool readRecord(ifstream& iFile, string& typeString, int& lSize, char& c)
+{
+	if(iFile.eof()){
+		return false;
+	} else {
+	iFile >> typeString >> lSize >> c;
+	return true;
+	}
+}
+
+bool openOutputFile(ofstream& oFile, string fname)
+{
+	oFile.open(fname);
+	if(oFile.is_open()){
+		return true;
+	}
+	return false;
+}
+
+
