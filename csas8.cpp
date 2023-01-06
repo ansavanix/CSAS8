@@ -6,21 +6,23 @@ using namespace std;
 
 //Required Functions:
 
-void makeSlash(ofstream& oFile, int size, char c);
+void topLine(ofstream& oFile, int size, char c, string symbolName); //Anthony
 
-void makeEight(ofstream& oFile, int size, char c);
+void makeSlash(ofstream& oFile, int size, char c); //Sebastian
 
-void makeTriangle(ofstream& oFile, int size, char c);
+void makeEight(ofstream& oFile, int size, char c); //Charles
 
-bool readRecord(ifstream& iFile, string& typeString, int& lSize, char& c);
+void makeTriangle(ofstream& oFile, int size, char c); //Anthony
 
-void openInputFile(ifstream& iFile, string prompt);
+bool readRecord(ifstream& iFile, string& typeString, int& lSize, char& c); //Yu Peng
 
-bool openOutputFile(ofstream& oFile, string fname);
+void openInputFile(ifstream& iFile, string prompt); //Miracle
 
-string createOutputFilename(string typeString, int labelSize);
+bool openOutputFile(ofstream& oFile, string fname); //Yu Peng
 
-void outputChar(ofstream& oFile, int count, char outChar);
+string createOutputFilename(string typeString, int labelSize); //Miracle
+
+void outputChar(ofstream& oFile, int count, char outChar); //Anthony
 
 
 int main() {
