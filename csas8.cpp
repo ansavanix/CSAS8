@@ -87,6 +87,9 @@ bool openOutputFile(ofstream& oFile, string fname)
 
 void makeEight(ofstream& oFile, int size, char c)
 {
+	topLine(oFile, size, c, "Figure Eight");
+	xAxis(oFile, size);
+	oFile << endl;
     int middle = 0;
     int edgeWidth = 0;
     int rowCount = 0;
@@ -120,6 +123,8 @@ void makeEight(ofstream& oFile, int size, char c)
         }
 
     }
+    oFile << endl;
+    xAxis(oFile, size);
 }
 
 void topLine(ofstream& oFile, int size, char c, string symbolName) {
