@@ -116,3 +116,44 @@ void makeEight(ofstream& oFile, int size, char c);
 
     }
 }
+
+void topLine(ofstream& oFile, int size, char c, string symbolName) {
+	oFile << "Symbol: " << symbolName << " Size: " << size << " Character: '" << c << "'" << endl;
+}
+
+void xAxis(ofstream& oFile, int size) {
+	oFile << "    ";
+	int current = 1;
+	for (int i = 0; i < size; i++) {
+		oFile << current;
+		current++;
+		if (current == 10) current = 0;
+	}
+	oFile << endl;
+}
+
+void makeTriangle(ofstream& oFile, int size, char c) {
+	int width = size * 2;
+	topLine(oFile, width, c, "Triangle");
+	xAxis(oFile, width);
+	outputChar(oFile, size - 2, ' ');
+	outputChar(oFile, 4, c);
+	outputChar(oFile, width - size - 6, ' ');
+	oFile << endl;
+	int startFirst = size - 2;
+	int startSecond = startFirst + 4;
+	for (int i = 1; i < size; i++) {
+		if (i < 10) {
+			oFile << " ";
+		}
+		oFile << i;
+		outputChar(oFile, startFirst, ' ');
+		outputChar(oFile, 2, c);
+		outputChar(oFile, startSecond - startFirst - 1, ' ');
+		outputChar(oFile, 2, c);
+		oFile << endl;
+		startFirst--;
+		startSecond++;
+	}
+	xAxis(oFile, width);
+}
