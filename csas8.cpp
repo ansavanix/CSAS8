@@ -146,6 +146,7 @@ void makeTriangle(ofstream& oFile, int size, char c) {
 	int width = size * 2;
 	topLine(oFile, width, c, "Triangle");
 	xAxis(oFile, width);
+	cout << endl;
 	outputChar(oFile, size - 2, ' ');
 	outputChar(oFile, 4, c);
 	outputChar(oFile, width - size - 6, ' ');
@@ -165,5 +166,6 @@ void makeTriangle(ofstream& oFile, int size, char c) {
 		startFirst--;
 		startSecond++;
 	}
+	cout << endl;
 	xAxis(oFile, width);
 }
