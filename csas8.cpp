@@ -110,12 +110,12 @@ void makeEight(ofstream& oFile, int size, char c)
     }
     for (int currentRow = 1; currentRow <= size; currentRow++)
     {
-        cout << (currentRow + 1) + "  ";
+        oFile << (currentRow + 1) + "  ";
         if ((size - currentRow == size - 1) || (size - currentRow == middle) || (size - currentRow == 0))
         {
              for (int i = 0; i < edgeWidth; i++)
              {
-                   cout << " ";
+                   oFile << " ";
              }
         }
 
