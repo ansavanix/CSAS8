@@ -104,7 +104,6 @@ void makeTriangle(ofstream& oFile, int size, char c) {
 	int width = size * 2;
 	topLine(oFile, size, c, "Triangle");
 	xAxis(oFile, width);
-	oFile << endl;
 	oFile << " " << 1;
 	oFile << " ";
 	outputChar(oFile, size - 1, ' ');
