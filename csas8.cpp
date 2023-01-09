@@ -102,20 +102,23 @@ void xAxis(ofstream& oFile, int size) {
 
 void makeTriangle(ofstream& oFile, int size, char c) {
 	int width = size * 2;
-	topLine(oFile, width, c, "Triangle");
+	topLine(oFile, size, c, "Triangle");
 	xAxis(oFile, width);
-	cout << endl;
-	outputChar(oFile, size - 2, ' ');
+	oFile << endl;
+	oFile << " " << 1;
+	oFile << " ";
+	outputChar(oFile, size - 1, ' ');
 	outputChar(oFile, 4, c);
 	outputChar(oFile, width - size - 6, ' ');
 	oFile << endl;
 	int startFirst = size - 2;
-	int startSecond = startFirst + 4;
-	for (int i = 1; i < size; i++) {
+	int startSecond = startFirst + 3;
+	for (int i = 2; i < size; i++) {
 		if (i < 10) {
 			oFile << " ";
 		}
 		oFile << i;
+		oFile << " ";
 		outputChar(oFile, startFirst, ' ');
 		outputChar(oFile, 2, c);
 		outputChar(oFile, startSecond - startFirst - 1, ' ');
@@ -124,14 +127,17 @@ void makeTriangle(ofstream& oFile, int size, char c) {
 		startFirst--;
 		startSecond++;
 	}
-	cout << endl;
+	oFile << " ";
+	oFile << size;
+	oFile << "  ";
+	outputChar(oFile, width, c);
+	oFile << endl;
 	xAxis(oFile, width);
 }
 
 //slashes
 void makeSlash(ofstream& oFile, int size, char c){
   int grid =1;
-  bool check = true;
   
   while (size > 0){
 int Yaxis = size;
@@ -141,10 +147,10 @@ oFile << " "<< grid;}
 oFile  <<  grid;}
     
 while (Yaxis>0){
-  cout<< " ";
+  oFile<< " ";
   Yaxis --;}
     
-cout<< "  "<< c << "\n";
+oFile<< "  "<< c << "\n";
 size--;
 grid++;    
   }
@@ -177,6 +183,7 @@ void makeEight(ofstream& oFile, int size, char c)
     {
         middle = (size / 2) + 1;
     }
+    int length = size - edgeWidth * 2;
     for (int currentRow = 1; currentRow <= size; currentRow++)
     {
         oFile << (currentRow + 1) + "  ";
@@ -191,7 +198,7 @@ void makeEight(ofstream& oFile, int size, char c)
 	else
 	{
 		outputChar(oFile, edgeWidth, c);
-		outputChar(oFile, length, " ");
+		outputChar(oFile, length, ' ');
 		outputChar(oFile, edgeWidth, c);
 	}
 	if (currentRow == (size - 1))
@@ -199,16 +206,15 @@ void makeEight(ofstream& oFile, int size, char c)
 		if (size % 2 == 0)
 		{
 		outputChar(oFile, edgeWidth, c);
-		outputChar(oFile, length, " ");
+		outputChar(oFile, length, ' ');
 		outputChar(oFile, edgeWidth, c);
 		}
 	}
 	oFile << endl;
-        }
-
-    }
+	}
     oFile << endl;
     xAxis(oFile, size);
+
 }
 
 void openInputFile(ifstream& iFile, string prompt){
@@ -224,4 +230,10 @@ string createOutputFilename(string typeString, int labelSize) {
   string fileName = typeString;
   fileName = fileName + "_" + to_string(labelSize) + ".txt";
   return fileName;
+}
+
+void outputChar(ofstream& oFile, int count, char outChar) {
+	for (int i = 0; i < count; i++) {
+		oFile << outChar;
+	}
 }
