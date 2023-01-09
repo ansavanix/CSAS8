@@ -210,3 +210,18 @@ void makeEight(ofstream& oFile, int size, char c)
     oFile << endl;
     xAxis(oFile, size);
 }
+
+void openInputFile(ifstream& iFile, string prompt){
+  string fileName;
+  do {
+    cout << prompt;
+  cin >> fileName;
+  iFile.open(fileName);
+  } while(!iFile.is_open() && (cout << "Try again." << endl));
+}
+
+string createOutputFilename(string typeString, int labelSize) {
+  string fileName = typeString;
+  fileName = fileName + "_" + to_string(labelSize) + ".txt";
+  return fileName;
+}
