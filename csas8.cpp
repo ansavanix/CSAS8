@@ -169,3 +169,26 @@ void makeTriangle(ofstream& oFile, int size, char c) {
 	cout << endl;
 	xAxis(oFile, width);
 }
+
+//slashes
+void makeSlash(ofstream& oFile, int size, char c){
+  int grid =1;
+  bool check = true;
+  
+  while (size > 0){
+int Yaxis = size;
+    if (grid <10){
+oFile << " "<< grid;}
+    else{
+oFile  <<  grid;}
+    
+while (Yaxis>0){
+  cout<< " ";
+  Yaxis --;}
+    
+cout<< "  "<< c << "\n";
+size--;
+grid++;    
+  }
+  }
+//end slash
