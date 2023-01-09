@@ -111,6 +111,7 @@ void makeEight(ofstream& oFile, int size, char c)
     {
         middle = (size / 2) + 1;
     }
+    int length = size - (edgeWidth * 2);
     for (int currentRow = 1; currentRow <= size; currentRow++)
     {
         oFile << (currentRow + 1) + "  ";
@@ -120,7 +121,15 @@ void makeEight(ofstream& oFile, int size, char c)
              {
                    oFile << " ";
              }
+             outputChar(oFile, length, c);
         }
+	else
+	{
+		outputChar(oFile, edgeWidth, c);
+		outputChar(oFile, length, " ");
+		outputChar(oFile, edgeWidth, c);
+	}
+	cout << endl;
 
     }
     oFile << endl;
